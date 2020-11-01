@@ -4,9 +4,9 @@
 class PIDController:
     def __init__(self, target_pos):
         self.target_pos = target_pos
-        self.Kp = 4000.0
+        self.Kp = 3900.0
         self.Ki = 1000.0
-        self.Kd = 3000.0
+        self.Kd = 3500.0
         self.bias = 0.0
         # pygame settings
         self.target_fps = 60.0
@@ -18,15 +18,11 @@ class PIDController:
         return
 
     def reset(self):
-        self.Kp = 4000.0
+        self.Kp = 3900.0
         self.Ki = 1000.0
-        self.Kd = 3000.0
-        # pygame settings
-        self.target_fps = 60.0
-        self.dt = 1.0 / self.target_fps
+        self.Kd = 3500.0
         # pid intermediate value settings
         self.cumulated_error = 0.0
-        self.windup_limit = 20.0
         self.previous_error = 0.0
         return
 
